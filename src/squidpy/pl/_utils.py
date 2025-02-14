@@ -537,6 +537,7 @@ def _get_cmap_norm(
 def _heatmap(
     adata: AnnData,
     key: str,
+    key_label: str | None = None,
     title: str = "",
     method: str | None = None,
     cont_cmap: str | mcolors.Colormap = "viridis",
@@ -593,7 +594,7 @@ def _heatmap(
     col_cats = divider.append_axes("top", size="2%", pad=0)
     cax = divider.append_axes("right", size="1%", pad=0.1)
     if method is not None:  # cluster rows but don't plot dendrogram
-        col_ax = divider.append_axes("top", size="5%")
+        col_ax = divider.append_axes("top", size="2%", pad =0.1)
         sch.dendrogram(
             col_link,
             no_labels=True,
@@ -621,7 +622,7 @@ def _heatmap(
     c = fig.colorbar(row_sm, cax=row_cats, orientation="vertical", ticklocation="left")
     c.set_ticks(np.arange(n_cls) + 0.5)
     c.set_ticklabels(row_labels)
-    c.set_label(key)
+    c.set_label(key_label)
 
     return fig
 
