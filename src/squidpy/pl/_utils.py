@@ -604,7 +604,7 @@ def _heatmap(
         )
         col_ax.axis("off")
         for line in col_ax.get_lines():
-            line.set_linewidth(0.5) 
+            line.set_linewidth(0.2) 
 
     _ = fig.colorbar(
         im,
