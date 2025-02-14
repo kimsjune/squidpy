@@ -594,13 +594,14 @@ def _heatmap(
     col_cats = divider.append_axes("top", size="2%", pad=0)
     cax = divider.append_axes("right", size="1%", pad=0.1)
     if method is not None:  # cluster rows but don't plot dendrogram
-        col_ax = divider.append_axes("top", size="2%", pad =0.1)
+        col_ax = divider.append_axes("top", size="4%", pad =0.1)
         sch.dendrogram(
             col_link,
             no_labels=True,
             ax=col_ax,
             color_threshold=0,
             above_threshold_color="black",
+            linewidth=0.5
         )
         col_ax.axis("off")
 
@@ -622,7 +623,10 @@ def _heatmap(
     c = fig.colorbar(row_sm, cax=row_cats, orientation="vertical", ticklocation="left")
     c.set_ticks(np.arange(n_cls) + 0.5)
     c.set_ticklabels(row_labels)
-    c.set_label(key_label)
+    if key_label is not None:
+        c.set_label(key_label)
+    else: 
+        c.set_label(key)
 
     return fig
 
