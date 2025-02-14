@@ -600,8 +600,7 @@ def _heatmap(
             no_labels=True,
             ax=col_ax,
             color_threshold=0,
-            above_threshold_color="black",
-            linewidth=0.5
+            above_threshold_color="black"
         )
         col_ax.axis("off")
 
