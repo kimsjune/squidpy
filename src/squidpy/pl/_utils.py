@@ -592,7 +592,7 @@ def _heatmap(
     divider = make_axes_locatable(ax)
     row_cats = divider.append_axes("left", size="2%", pad=0)
     col_cats = divider.append_axes("top", size="2%", pad=0)
-    cax = divider.append_axes("right", size="1%", pad=0.1)
+    cax = divider.append_axes("right", size="3%", pad=0.1)
     if method is not None:  # cluster rows but don't plot dendrogram
         col_ax = divider.append_axes("top", size="6%", pad =0.1)
         sch.dendrogram(
