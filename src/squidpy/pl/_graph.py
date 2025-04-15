@@ -391,7 +391,7 @@ def co_occurrence(
             hue=cluster_key,
             hue_order=categories,
             palette=palette,
-            ax=ax,
+            #ax=ax,
             **kwargs,
         )
         ax.legend(**legend_kwargs)
